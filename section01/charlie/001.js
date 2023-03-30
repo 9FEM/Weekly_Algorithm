@@ -11,6 +11,7 @@ function solution(a, b, c) {
 		return c;
 }
 
+// TEST CODE
 console.log(solution(6, 5, 11)); // Expected Answer: 5
 console.log(solution(1, 100, 50)); // Expected Answer: 1
 console.log(solution(5, 5, 10)); // Expected Answer: 5

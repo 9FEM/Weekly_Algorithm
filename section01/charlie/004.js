@@ -13,6 +13,7 @@ function solution(N) {
 	return answer;
 }
 
+// TEST CODE
 console.log(solution(6)); //Expected Answer: 21
 console.log(solution(10)); //Expected Answer: 55
 console.log(solution(11)); //Expected Answer: 66

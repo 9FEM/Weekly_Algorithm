@@ -7,6 +7,7 @@ function solution(nums) {
 	return (answer);
 }
 
+// TEST CODE
 const testA = [5, 3, 7, 11, 2, 15, 17];
 console.log(solution(testA)); // Expected Answer: 2
 

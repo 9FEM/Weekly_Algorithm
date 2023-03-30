@@ -7,6 +7,7 @@ function solution(N)
 	return (Math.ceil(N / 12));
 }
 
+// TEST CODE
 console.log(solution(25)); // Expected Answer: 3
 console.log(solution(178)); // Expected Answer: 15
 console.log(solution(100)); // Expected Answer: 9

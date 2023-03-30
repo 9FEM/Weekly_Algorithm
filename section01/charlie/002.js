@@ -8,6 +8,7 @@ function solution(a, b, c) {
 	return "NO";
 }
 
+// TEST CODE
 console.log(solution(6, 7, 11)); // Expected Answer: YES
 console.log(solution(4, 5, 10)); // Expected Answer: NO
 console.log(solution(6, 10, 15)); // Expected Answer: YES
