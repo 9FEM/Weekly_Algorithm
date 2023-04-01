@@ -16,13 +16,13 @@ function solution(n, arr) {
 }
 
 const testA = ["good", "time", "good", "time", "student"];
-solution(5, testA);
+solution(5, testA); // ["good", "time", "student"]
 
 const testB = ["hello", "world", "hello", "world", "hello"];
-solution(5, testB);
+solution(5, testB); // ["hello", "world"]
 
 const testC = ["my", "name", "is", "charlie"];
-solution(4, testC);
+solution(4, testC); // ["my", "name", "is", "charlie"]
 
 
 /*
