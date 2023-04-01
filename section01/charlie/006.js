@@ -19,7 +19,7 @@ function solution(nums) {
 const testA = [12, 77, 38, 41, 53, 92, 85]; // Expected Answer: 256 41
 solution(testA);
 
-const testB = [1, 2, 3, 4, 5, 6, 7]; // Expected Answer:  
+const testB = [1, 2, 3, 4, 5, 6, 7]; // Expected Answer: 16 1
 solution(testB);
 
 
