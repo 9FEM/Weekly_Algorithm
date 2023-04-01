@@ -3,15 +3,41 @@
 제거된 문자열의 각 문자는 원래 문자열의 순서를 유지합니다.
 */
 
-function solution() {
+function solution(str) {
+	let answer = "";
 
+	for (let x of str) {
+		if (answer.indexOf(x) == -1)
+			answer += x;
+	}
+
+	console.log(answer);
 }
 
-const testA = ;
-solution(testA);
+const testA = "ksekkset";
+solution(testA); // 'kset'
 
-const testB = ;
-solution(testB);
+const testB = "aaaaaaaa";
+solution(testB); // 'a'
 
-const testC = ;
-solution(testC);
+const testC = "hello world";
+solution(testC); // 'helo wrd'
+
+/*
+
+1. split 과 join의 반복
+-->
+{
+	let answer = "";
+	while(str.length) {
+		answer += str[0];
+		str = str.split(str[0]).join('');
+	}
+	console.log(answer);
+}
+
+2. indexOf를 활용한 반복
+
+3. 이중 반복문
+
+*/
