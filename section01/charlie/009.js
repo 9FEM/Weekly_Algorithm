@@ -3,7 +3,7 @@
 */
 
 function solution(str) {
-
+	console.log(str.replace(/A/g, '#'));
 }
 
 
@@ -16,3 +16,9 @@ solution(testB); // ######
 
 const testC = "APPLEA";
 solution(testC); // #PPLE#
+
+/*
+
+정규표현식 사용할때마다 구글링하지말고 기억하기.
+
+*/Charlie: Solved, S01 008 - 009 누락된 문제 해결
