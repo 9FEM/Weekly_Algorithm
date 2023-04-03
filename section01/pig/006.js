@@ -31,4 +31,4 @@ function solution(a, b, c, d, e, c, f, g) {
   console.log(sum);
   console.log(min);
 }
-console.log(solution(12, 77, 38, 41, 53, 92, 85));
+solution(12, 77, 38, 41, 53, 92, 85);

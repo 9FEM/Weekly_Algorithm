@@ -15,5 +15,22 @@
 // 20 7 23 19 10 15 25 8 13
 // ▣ 출력예제 1
 // 20 7 23 19 10 8 13
-function solution() {}
-console.log(solution());
+
+function solution(numbers) {
+  let sum = numbers.reduce((a, b) => a + b);
+
+  for (let i = 0; i < numbers.length; i++) {
+    for (let j = i + 1; j < numbers.length; j++) {
+      if (sum - (numbers[i] + numbers[j]) === 100) {
+        numbers.splice(j, 1);
+        numbers.splice(i, 1);
+        return console.log(numbers);
+      }
+    }
+  }
+}
+
+solution([20, 7, 23, 19, 10, 15, 25, 8, 13]);
+solution([20, 40, 30, 12, 10, 15, 25, 8, 10]);
+
+// 아홉 난쟁이의 키는 모두 다르며 <<<< 이거 안봐서 해맸어요;
