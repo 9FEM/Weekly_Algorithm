@@ -10,13 +10,18 @@
 // ▣ 출력예제 1
 // 3eo
 
-function solution(s) {
+function solution(str) {
   let answer = 0;
-  for (let x of s) {
-    if (x === x.toUpperCase()) answer++
+  // for (let i = 0; i <= str.length; i+++) {}
+  for (let string of str) {
+    if(string == string.toUpperCase()) {
+      answer += 1;
+    }
   }
   return answer;
 }
 
-let str = "KoreaTimeGood";
+
+
+const str = "KoreaTimeGood";
 console.log(solution(str));

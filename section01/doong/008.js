@@ -15,3 +15,26 @@
 // 20 7 23 19 10 15 25 8 13
 // ▣ 출력예제 1
 // 20 7 23 19 10 8 1
+function solution(height) {
+  let answer;
+  // 난쟁이들의 키 총합
+  const heightsum = height.reduce((a, b) => a + b, 0);
+  // 난쟁이들 두명 식 키를 비교!
+  for (let i = 0; i < height.length; i++)
+    for (let j = i + 1; j < height.length; j++) {
+      if(heightsum - height[i] - height[j] == 100){
+        answer = height.filter((el, idx) => idx !== i && idx !== j); // 25랑 15랑 빼고 가져가자!
+      }
+    }
+  return answer;
+}
+
+// 난쟁이의 키의 합 100
+// 다 더하면 140, 40은 나가!! 두명이 합쳤을 떄 40이면 나가!
+//=> 140 - 난쟁이 1 - 난쟁이 2 == 100
+
+// 0번째 +1 친구부터
+// 총합에서 두 명의 키를 뺀 값이 100 이면 이 두명을 제외한 난쟁이 키 출력!
+
+const height = [20, 7, 23, 19, 10, 15, 25, 8, 13];
+console.log(solution(height))

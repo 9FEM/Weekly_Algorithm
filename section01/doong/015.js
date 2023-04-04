@@ -13,3 +13,23 @@
 // good
 // ▣ 출력예제 2
 // oo
+
+function solution(str) {
+  let answer = "";
+  let middle = Math.floor(str.length / 2);
+
+  // 짝수면? good
+  if(str.length % 2 == 0) {
+    answer = str[middle - 1] + str[middle];
+  } else {
+    answer = str[middle];
+  }
+  return answer;
+}
+
+
+
+const str = "study";
+const str2 = "good";
+console.log(solution(str));
+console.log(solution(str2));

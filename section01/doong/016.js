@@ -10,3 +10,22 @@
 // ksekkset
 // ▣ 출력예제 1
 // kset
+function solution(str) {
+  let answer = "";
+  // for of
+  // for(let x of str) {
+  //   if(answer.indexOf(x) == -1) {
+  //     answer += x;
+  //   }
+  // }
+
+  // 메서드 Set() => 중복을 제거하고 객체 
+  
+  let arr = [...new Set(str)];  // 배열 [ksekkset]
+  answer = arr.join("");
+
+  return answer;
+}
+
+const string = "ksekkset";
+console.log(solution(string));

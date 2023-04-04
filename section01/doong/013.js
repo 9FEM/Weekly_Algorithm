@@ -9,3 +9,17 @@
 // StuDY
 // ▣ 출력예제 1
 // sTUdy
+function solution(str) {
+  let answer = "";
+  for (let string of str) {
+    if (string == string.toUpperCase()) {
+      answer += string.toLowerCase();
+    } else {
+      answer += string.toUpperCase();
+    }
+  }
+  return answer;
+}
+
+const str = "StuDY";
+console.log(solution(str));

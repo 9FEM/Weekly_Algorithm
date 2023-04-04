@@ -9,3 +9,10 @@
 // ItisTimeToStudy
 // ▣ 출력예제 1
 // ITISTIMETOSTUDY
+
+function solution(str) {
+  let answer = str.toUpperCase();
+  return answer;
+}
+const str = "ItisTimeToStudy";
+console.log(solution(str));

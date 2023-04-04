@@ -15,3 +15,24 @@
 // good
 // ▣ 출력예제 1
 // beautifu
+
+function solution(arr) {
+  let answer = ""; 
+  let max = 0;
+
+  for (let array of arr) {
+    if (array.length > max) {
+      max = array.length;
+      answer = array;
+    }
+  }
+  return answer;
+}
+
+
+
+
+const arr = [5, "teacher", "time", "student", "beautiful", "good"];
+console.log(solution(arr));
+
+//beautiful

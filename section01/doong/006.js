@@ -17,5 +17,15 @@
 // ▣ 출력예제 1
 // 256
 // 41
+function solution(array) {
+  let answer = [];
+  let arr = array.filter(n => n % 2 == 1);
+  let sum = arr.reduce((a, b) => a + b, 0);
 
+  answer.push(sum);
+  answer.push(Math.min(...arr));
+  return answer;
+}
 
+const arr = [12, 77,38, 41, 53, 92, 85]
+console.log(solution(arr));

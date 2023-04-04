@@ -14,7 +14,21 @@
 // time
 // student
 // ▣ 출력예제 1
+// 5
 // good
 // time
 // student
 
+function solution(arr) {
+  let answer;
+
+  // 행위
+  // 중복 문자 제거 - Set 
+  answer = [...new Set(arr)]; // [5, "good", "time", "student"]
+  // 숫자 제거
+  answer = answer.filter(el => typeof el !== "number"); 
+  return answer;
+}
+
+const arr = [5, "good", "time", "good", "time", "student"];
+console.log(solution(arr))

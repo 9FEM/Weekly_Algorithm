@@ -11,3 +11,15 @@
 // R
 // ▣ 출력예제 1
 // 3
+
+function solution(str, char) {
+  let answer = str.split(char); // string에서 R로 나눠주기
+  answer = answer.length - 1; // 길이 4에서 -1 해주기
+  return answer;
+}
+
+const string = "COMPUTERPROGRAMMING";
+const str = "R"
+console.log(solution(string, str));
+
+// 3

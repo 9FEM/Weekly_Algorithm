@@ -23,3 +23,27 @@
 // 12 20 54 30 87 91 30
 // ▣ 출력예제 2
 // 3
+function solution(day, cars) {
+  let answer = 0;
+  // 행위 - 순회!
+
+  // 일의 자리 찾기 (10으로 나눈 나머지!가 day랑 같아?)
+  // 일의 자리를 찾아서 day와 같으면 answer += 1
+
+  for(let el of cars) {
+    if (el % 10 == day) {
+      answer += 1;
+      // answer = answer + 1;
+      // answer++;
+    }
+  }
+  return answer;
+}
+
+
+
+const day = 3; // 3일 
+const cars = [25, 23, 11, 47, 53, 17, 33]; // 3인 얘가 몇대인지
+
+console.log(solution(day, cars));
+
