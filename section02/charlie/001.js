@@ -7,7 +7,15 @@
 */
 
 function solution(n, numbers) {
+	const answer = [];
+	answer.push(numbers[0]);
 
+	for (let i in numbers)
+	{
+		if (i && numbers[i - 1] < numbers[i])
+			answer.push(numbers[i]);
+	}
+	return answer;
 }
 
 

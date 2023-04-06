@@ -8,20 +8,29 @@
 */
 
 function solution(n, numbers) {
+	let tallest = 0;
+	let answer = 0;
 
+	for (let x of numbers)
+	{
+		if (x > tallest) {
+			answer++;
+			tallest = x; // 앞을 가리는 가장 큰 아이만 업데이트
+		}
+	}
+	return answer;
 }
-
 
 
 const numA = 8;
 const numbersA = [130, 135, 148, 140, 145, 150, 150, 153];
 console.log(solution(numA, numbersA)); // 5
 
-const numB = 8;
-const numbersB = [130, 135, 148, 140, 145, 150, 150, 153];
-console.log(solution(numB, numbersB)); // 5
+const numB = 10;
+const numbersB = [10, 10, 11, 20, 15, 10, 30, 50, 55, 60];
+console.log(solution(numB, numbersB)); // 7
 
 const numC = 8;
-const numbersC = [130, 135, 148, 140, 145, 150, 150, 153];
-console.log(solution(numC, numbersC)); // 5
+const numbersC = [130, 130, 130, 130, 130, 130, 130, 130];
+console.log(solution(numC, numbersC)); // 1
 

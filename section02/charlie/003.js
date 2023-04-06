@@ -16,10 +16,18 @@ B의 정보 11223
 */
 
 function solution(n, personA, personB) {
+	const answer = [];
 
-
+	for (let i = 0; i < n; i++) {
+		if (personA[i] == personB[i])
+			answer.push('D');
+		else if ((personA[i] === 3 && personB[i] === 1) || (personA[i] < personB[i]))
+			answer.push('B');
+		else
+			answer.push('A');
+	}
+	return answer;
 }
-
 
 
 const numA = 5;
@@ -28,11 +36,11 @@ const personB = [1, 1, 2, 2, 3];
 console.log(solution(numA, personA, personB)); // A B A B D
 
 const numB = 5;
-const personC = [2, 3, 3, 1, 3];
+const personC = [1, 1, 2, 2, 3];
 const personD = [1, 1, 2, 2, 3];
-console.log(solution(numB, personC, personD)); // A B A B D
+console.log(solution(numB, personC, personD)); // D D D D D
 
 const numC = 5;
-const personE = [2, 3, 3, 1, 3];
-const personF = [1, 1, 2, 2, 3];
-console.log(solution(numC, personE, personF)); // A B A B D
+const personE = [3, 1, 3, 2, 3];
+const personF = [1, 3, 2, 3, 1];
+console.log(solution(numC, personE, personF)); // B B A B B
