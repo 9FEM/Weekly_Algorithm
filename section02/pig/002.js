@@ -11,5 +11,32 @@
 // 130 135 148 140 145 150 150 153
 // ▣ 출력예제 1
 // 5
-function solution() {}
-solution();
+
+// function solution(arr) {
+//   let count = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] < arr[i + 1]) {
+//       count++;
+//       console.log(arr[i]);
+//     }
+//   }
+//   console.log(count);
+// }
+// 잘못된 풀이 ㅠ
+
+function solution(n, arr) {
+  //  첫번째 친구
+  let count = 1;
+  let result = arr[0];
+
+  for (let i = 0; i < n; i++) {
+    // 바로 앞과 뒤 친구를 비교하고 앞에서 제일 컷던 친구와도 비교하여 카운트.
+    if (arr[i] < arr[i + 1] && arr[i + 1] > result) {
+      result = arr[i + 1];
+      count++;
+    }
+  }
+  console.log(count);
+}
+const arr = [130, 135, 138, 140, 145, 150, 150, 153];
+solution(8, arr);

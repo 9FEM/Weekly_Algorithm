@@ -12,5 +12,12 @@
 // 87 89 92 100 76
 // ▣ 출력예제 1
 // 4 3 2 1 5
-function solution() {}
-solution();
+
+function solution(arr) {
+  let rank = [...arr].sort((a, b) => b - a);
+  let result = arr.map((x) => rank.indexOf(x) + 1);
+  //   x에다가 정렬된 rank의 indexOf로 각 요소의 인덱스를 찾고 1을 더해줌.
+  console.log(result);
+}
+
+solution([87, 89, 92, 100, 76, 50]);

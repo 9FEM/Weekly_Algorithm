@@ -23,5 +23,21 @@
 // 1 0 1 1 1 0 0 1 1 0
 // ▣ 출력예제 1
 // 10
-function solution() {}
-solution();
+
+// 콤보 쌓으면 점수가 +1씩 증가. 스코어 +1씩 증가시키고 만약 앞의 인덱스가 0이면 초기화.ㅇㅋ
+function solution(n, arr) {
+  let sum = 0;
+  let score = 0;
+  for (let i = 0; i < n; i++) {
+    if (arr[i] > 0) {
+      score++;
+      sum += score;
+    }
+    if (arr[i] === 0) {
+      score = 0;
+    }
+  }
+  console.log(sum);
+}
+const arr = [1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1];
+solution(12, arr);

@@ -22,5 +22,42 @@
 // 19 13 30 13 19
 // ▣ 출력예제 1
 // 155
-function solution() {}
-solution();
+// n * n의 배열이고 각 행의 합은 ij, 각 열의 합은 ji 대각선은 ii,i-n-1?
+function solution(n, arr) {
+  let row_sum = (col_sum = dia_sum1 = dia_sum2 = 0);
+  let result = 0;
+  for (let i = 0; i < n; i++) {
+    row_sum = col_sum = 0;
+
+    for (let j = 0; j < n; j++) {
+      row_sum += arr[i][j];
+      col_sum += arr[j][i];
+    }
+    if (row_sum > result) {
+      result = row_sum;
+    }
+    if (col_sum > result) {
+      result = col_sum;
+    }
+  }
+  for (let i = 0; i < n; i++) {
+    dia_sum1 += arr[i][i];
+    dia_sum2 += arr[i][n - i - 1];
+  }
+  if (dia_sum1 > result) {
+    result = dia_sum1;
+  }
+  if (dia_sum2 > result) {
+    result = dia_sum2;
+  }
+  console.log(result);
+}
+
+const arr = [
+  [10, 13, 10, 12, 15],
+  [12, 39, 30, 23, 11],
+  [11, 25, 50, 53, 15],
+  [19, 27, 29, 37, 27],
+  [19, 13, 30, 13, 19],
+];
+solution(5, arr);

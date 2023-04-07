@@ -25,5 +25,29 @@
 // A
 // B
 // D
-function solution() {}
-solution();
+
+// 일단 n으로 for문 돌리고 1은 3을 이기고 2는 1을 이기고 3을 2를 이김. 숫자가 같으면 비기고. switch로 할까.
+function solution(n, arrA, arrB) {
+  for (let i = 0; i < n; i++) {
+    switch (arrA[i] - arrB[i]) {
+      case 0:
+        console.log("D");
+        break;
+      case 1:
+        console.log("A");
+        break;
+      case 2:
+        console.log("B");
+        break;
+      case -1:
+        console.log("B");
+        break;
+      case -2:
+        console.log("A");
+        break;
+    }
+  }
+}
+const arrA = [2, 3, 3, 1, 3];
+const arrB = [1, 1, 2, 2, 3];
+solution(5, arrA, arrB);

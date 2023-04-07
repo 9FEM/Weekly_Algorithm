@@ -10,5 +10,16 @@
 // 7 3 9 5 6 12
 // ▣ 출력예제 1
 // 7 9 6 12
-function solution() {}
-solution();
+
+function solution(n, arr) {
+  let result = [arr[0]];
+  for (let i = 1; i < n; i++) {
+    if (arr[i] > arr[i - 1]) {
+      result.push(arr[i]);
+    }
+  }
+  return console.log(result);
+}
+
+const arr = [7, 3, 9, 5, 6, 12];
+solution(6, arr);
