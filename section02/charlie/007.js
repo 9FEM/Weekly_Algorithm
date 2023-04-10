@@ -11,27 +11,58 @@
 */
 
 function solution(map) {
+	let count = 0;
 
+	for (let i = 0; i < map.length; i++) {
+		for (let j = 0; j < map.length; j++) {
+			if (i > 0 && map[i][j] <= map[i - 1][j])  // 상
+				continue;
+			if (i + 1 < map.length && map[i][j] <= map[i + 1][j])  // 하
+					continue;
+			if (j > 0 && map[i][j] <= map[i][j - 1])  // 좌
+				continue;
+			if (j + 1 < map.length && map[i][j] <= map[i][j + 1])  // 우
+				continue;
+			count += 1;
+		}
+	}
+	return count;
 }
 
 
-const mapA = [[5, 3, 7, 2, 3], 
+const mapA = 
+[[5, 3, 7, 2, 3], 
 [3, 7, 1, 6, 1], 
 [7, 2, 5, 3, 4], 
 [4, 3, 6, 4, 1], 
 [8, 7, 3, 5, 2]];
 console.log(solution(mapA)); // 10
 
-const mapB = [[10, 13, 10, 12, 15], 
-[12, 39, 30, 23, 11], 
-[11, 25, 50, 53, 15], 
-[19, 27, 29, 37, 27], 
-[19, 13, 30, 13, 19]];
-console.log(solution(mapB));
+const mapB = 
+[[1, 2, 3, 4, 5], 
+[5, 4, 3, 2, 1], 
+[1, 2, 3, 4, 5], 
+[5, 4, 3, 2, 1], 
+[1, 2, 3, 4, 5]];
+console.log(solution(mapB)); // 5
 
-const mapC = [[10, 13, 10, 12, 15], 
-[12, 39, 30, 23, 11], 
-[11, 25, 50, 53, 15], 
-[19, 27, 29, 37, 27], 
-[19, 13, 30, 13, 19]];
-console.log(solution(mapC));
+const mapC = 
+[[10, 10, 10, 10, 10], 
+[10, 10, 10, 10, 10],
+[10, 10, 10, 10, 10],
+[10, 10, 10, 10, 10],
+[10, 10, 10, 10, 10]];
+console.log(solution(mapC)); // 0
+
+const mapD = 
+[[20, 10, 20, 10, 20], 
+[10, 20, 10, 20, 10],
+[20, 10, 20, 10, 20],
+[10, 20, 10, 20, 10],
+[20, 10, 20, 10, 20]];
+console.log(solution(mapD)); // 13
+
+/*
+이 또한 완전탐색이 정답일 것 같은데,
+다른 방법은 없을까
+*/
