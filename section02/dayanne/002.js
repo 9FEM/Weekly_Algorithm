@@ -12,18 +12,17 @@
 // ▣ 출력예제 1
 // 5
 function solution(n, numbers) {
-  let answer = [];
-  let count = 1;
+  let cntStudent = 1;
   for (let i = 1; i < numbers.length; i++) {
-    let a = 0;
+    let cntFront = 0;
     for (let j = i - 1; j > -1; j--) {
       if (numbers[i] > numbers[j]) {
-        a++;
+        cntFront++;
       }
     }
-    if (a === i) count++;
+    if (cntFront === i) cntStudent++;
   }
-  return count;
+  return cntStudent;
 }
 
 let height_list = [130, 135, 148, 140, 145, 150, 150, 153];
