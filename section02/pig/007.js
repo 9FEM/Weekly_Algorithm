@@ -26,5 +26,82 @@
 // 8 7 3 5 2
 // ▣ 출력예제 1
 // 10
-function solution() {}
-solution();
+// function solution(map) {
+//   let count = 0;
+//   for (let i = 0; i < map.length; i++) {
+//     for (let j = 0; j < map.length; j++) {
+//       if (i > 0 && map[i][j] <= map[i - 1][j])
+//         // 상
+//         continue;
+//       if (i + 1 < map.length && map[i][j] <= map[i + 1][j])
+//         // 하
+//         continue;
+//       if (j > 0 && map[i][j] <= map[i][j - 1])
+//         // 좌
+//         continue;
+//       if (j + 1 < map.length && map[i][j] <= map[i][j + 1])
+//         // 우
+//         continue;
+//       count += 1;
+//     }
+//   }
+//   return console.log(count);
+// }
+function solution(n, grid) {
+  let count = 0;
+
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < n; j++) {
+      const curr = grid[i][j];
+      let isPeak = true;
+
+      if (i > 0 && curr <= grid[i - 1][j]) {
+        isPeak = false;
+      }
+      if (j > 0 && curr <= grid[i][j - 1]) {
+        isPeak = false;
+      }
+      if (i < n - 1 && curr <= grid[i + 1][j]) {
+        isPeak = false;
+      }
+      if (j < n - 1 && curr <= grid[i][j + 1]) {
+        isPeak = false;
+      }
+
+      if (isPeak) {
+        count++;
+      }
+    }
+  }
+
+  return console.log(count);
+}
+const map = [
+  [5, 3, 7, 2, 3],
+  [3, 7, 1, 6, 1],
+  [7, 2, 5, 3, 4],
+  [4, 3, 6, 4, 1],
+  [8, 7, 3, 5, 2],
+];
+solution(5, map); //10
+
+const mapB = [
+  [1, 2, 3, 4, 5],
+  [5, 4, 3, 2, 1],
+  [1, 2, 3, 4, 5],
+  [5, 4, 3, 2, 1],
+  [1, 2, 3, 4, 5],
+];
+solution(5, mapB); // 5
+
+const mapD = [
+  [20, 10, 20, 10, 20],
+  [10, 20, 10, 20, 10],
+  [20, 10, 20, 10, 20],
+  [10, 20, 10, 20, 10],
+  [20, 10, 20, 10, 20],
+];
+solution(5, mapD); // 13
+
+// 도경님 코드와 GPT가 가져다준 코드로 푸는 방식에 대한 이해를 도왔습니다. 감사합니다.
+// 맑은 정신으로 더 많이많이 생각했다면 떠올랐을 것 같기도 하네요ㅜ
