@@ -50,8 +50,6 @@ function solution(num, grid) {
   return count;
 }
 
-console.log(solution(num, grid)); // 10
-
 const num = 5;
 const grid = [
   [5, 3, 7, 2, 3],
@@ -60,3 +58,5 @@ const grid = [
   [4, 3, 6, 4, 1],
   [8, 7, 3, 5, 2],
 ];
+
+console.log(solution(num, grid)); // 10
