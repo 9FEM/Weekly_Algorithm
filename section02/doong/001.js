@@ -6,7 +6,7 @@ function solution(arr) {
   const answer = [];
   answer.push(arr[0]);  // 첫번쨰 수는 무조건 출력해야하기때문에 
 
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 1; i < arr.length; i++) {
     if (arr[i] > arr[i - 1]) {
       answer.push(arr[i]);
     }
