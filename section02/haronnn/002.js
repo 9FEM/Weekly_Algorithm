@@ -11,14 +11,15 @@
 // ▣ 출력예제 1
 // 5
 function solution(teacher, students) {
-  let answer = 0;
-  let max = 0;
+  let answer = 1;
+  let max = students[0]; // 맨 처음 친구
 
   for (let i = 0; i < teacher; i++) {
     // 가장 큰 친구가 앞에 온다고 가정하면 오류가 날 수 있기에 수정
     if (students[i] < students[i + 1] && students[i + 1] > max) {
       // 제일 큰 칭구
-      max = students[i];
+      max = students[i + 1];
+      console.log(max);
       answer++;
     }
   }
