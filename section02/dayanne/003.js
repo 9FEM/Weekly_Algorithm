@@ -14,7 +14,8 @@
 // B
 // D
 
-function solution(n, list_a, list_b) {
+// 1)
+function solutionA(n, list_a, list_b) {
   for (let i = 0; i < n; i++) {
     let answer = '';
     switch (list_a[i]) {
@@ -32,4 +33,30 @@ function solution(n, list_a, list_b) {
   }
 }
 
-solution(5, [2, 3, 3, 1, 3], [1, 1, 2, 2, 3]);
+// 2)
+function solutionB(n, list_a, list_b) {
+  for (let i = 0; i < n; i++) {
+    let answer = '';
+    switch (list_a[i] - list_b[i]) {
+      case -2:
+        answer = 'A';
+        break;
+      case -1:
+        answer = 'B';
+        break;
+      case 0:
+        answer = 'D';
+        break;
+      case 1:
+        answer = 'A';
+        break;
+      case 2:
+        answer = 'B';
+        break;
+    }
+    console.log(answer);
+  }
+}
+
+solutionA(5, [2, 3, 3, 1, 3], [1, 1, 2, 2, 3]);
+solutionB(5, [2, 3, 3, 1, 3], [1, 1, 2, 2, 3]);
