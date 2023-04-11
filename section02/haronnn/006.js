@@ -30,8 +30,8 @@ function solution(n, grid) {
     let col = 0;
 
     for (let j = 0; j < n; j++) {
-      row += Math.floor(grid[i][j]); // 행의 합
-      col += Math.floor(grid[j][i]); // 열의 합
+      row += grid[i][j]; // 행의 합
+      col += grid[j][i]; // 열의 합
     }
     answer = Math.max(answer, row, col);
   }
@@ -40,8 +40,8 @@ function solution(n, grid) {
   let cross = 0;
   let recross = 0;
   for (let i = 0; i < n; i++) {
-    cross += Math.floor(grid[i][i]);
-    recross += Math.floor(grid[i][n - i - 1]);
+    cross += grid[i][i];
+    recross += grid[i][n - i - 1];
   }
   answer = Math.max(answer, cross, recross);
 
