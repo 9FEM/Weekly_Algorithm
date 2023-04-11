@@ -26,5 +26,22 @@
 // 8 7 3 5 2
 // ▣ 출력예제 1
 // 10
-function solution() {}
-solution();
+function solution(num, grid) {
+  let answer = 0;
+
+  for (let i = 0; i < num+1; i++){
+    for (let j = 0; j < num + 1; j++){
+  }
+  
+  return answer;
+}
+console.log(solution(num, grid));
+
+const num = 5;
+const grid = [
+  [5, 3, 7, 2, 3],
+  [3, 7, 1, 6, 1],
+  [7, 2, 5, 3, 4],
+  [4, 3, 6, 4, 1],
+  [8, 7, 3, 5, 2],
+];
