@@ -26,16 +26,31 @@
 // 8 7 3 5 2
 // ▣ 출력예제 1
 // 10
-function solution(num, grid) {
-  let answer = 0;
 
-  for (let i = 0; i < num+1; i++){
-    for (let j = 0; j < num + 1; j++){
+function solution(num, grid) {
+  let count = 0; // 봉우리 개수
+  const dx = [-1, 0, 1, 0]; // 좌우
+  const dy = [0, 1, 0, -1]; // 상하
+
+  for (let i = 0; i < num; i++) {
+    for (let j = 0; j < num; j++) {
+      let maxHeight = 0; // 현재 칸 주변의 최대 높이를 저장
+      for (let k = 0; k < 4; k++) {
+        const nx = i + dx[k];
+        const ny = j + dy[k];
+        // 현재 칸 주변 4방향에 있는 칸들 중에서 최대 높이를 구함
+        if (nx >= 0 && nx < num && ny >= 0 && ny < num) {
+          maxHeight = Math.max(maxHeight, grid[nx][ny]);
+        }
+      }
+      // 현재 칸의 높이가 주변 4방향 칸들의 최대 높이보다 큰 경우 봉우리이므로 count 증가
+      if (grid[i][j] > maxHeight) count++;
+    }
   }
-  
-  return answer;
+  return count;
 }
-console.log(solution(num, grid));
+
+console.log(solution(num, grid)); // 10
 
 const num = 5;
 const grid = [
