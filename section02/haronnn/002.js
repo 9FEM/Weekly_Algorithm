@@ -12,9 +12,12 @@
 // 5
 function solution(teacher, students) {
   let answer = 0;
+  let max = arr[0];
 
   for (let i = 0; i < teacher; i++) {
-    if (students[i] < students[i + 1]) {
+    // 가장 큰 친구가 앞에 온다고 가정하면 오류가 날 수 있기에 수정
+    if (students[i] < students[i + 1] && students[i + 1] > max) {
+      max = students[i + 1];
       answer++;
     }
   }
