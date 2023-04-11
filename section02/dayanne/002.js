@@ -11,20 +11,34 @@
 // 130 135 148 140 145 150 150 153
 // ▣ 출력예제 1
 // 5
+
+// 1) 기존 풀이
+// function solution(n, numbers) {
+//   let cntStudent = 1;
+//   for (let i = 1; i < numbers.length; i++) {
+//     let cntFront = 0;
+//     for (let j = i - 1; j > -1; j--) {
+//       if (numbers[i] > numbers[j]) {
+//         cntFront++;
+//       }
+//     }
+//     if (cntFront === i) cntStudent++;
+//   }
+//   return cntStudent;
+// }
+
+// 2) 간단 ver (max값 활용)
 function solution(n, numbers) {
-  let cntStudent = 1;
-  for (let i = 1; i < numbers.length; i++) {
-    let cntFront = 0;
-    for (let j = i - 1; j > -1; j--) {
-      if (numbers[i] > numbers[j]) {
-        cntFront++;
-      }
+  let cntStudent = 0;
+  let maxStudent = 0;
+  for (let i of numbers) {
+    if (maxStudent < i) {
+      maxStudent = i;
+      cntStudent++;
     }
-    if (cntFront === i) cntStudent++;
   }
   return cntStudent;
 }
-
 let height_list = [130, 135, 148, 140, 145, 150, 150, 153];
 let height_list2 = [180, 135, 158, 150, 150, 153];
 let height_list3 = [163, 163, 163, 163, 163];
