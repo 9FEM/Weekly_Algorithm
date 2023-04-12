@@ -10,16 +10,33 @@
 // 130 135v 148v 140 145v 150v 150 153v
 // ▣ 출력예제 1
 // 5
-function solution(teacher, students) {
-  let answer = 1;
-  let max = students[0]; // 맨 처음 친구
+//! 기존 초과하는 풀이
+// function solution(teacher, students) {
+//   let answer = 1;
+//   let max = students[0]; // 맨 처음 친구
 
-  for (let i = 0; i < teacher; i++) {
-    // 가장 큰 친구가 앞에 온다고 가정하면 오류가 날 수 있기에 수정
-    if (students[i] < students[i + 1] && students[i + 1] > max) {
-      // 제일 큰 칭구
-      max = students[i + 1];
-      console.log(max);
+//   for (let i = 0; i < teacher; i++) {
+//     // 가장 큰 친구가 앞에 온다고 가정하면 오류가 날 수 있기에 수정
+//     if (students[i] < students[i + 1] && students[i + 1] > max) {
+//       // 제일 큰 칭구
+//       max = students[i + 1];
+//       console.log(max);
+//       answer++;
+//     }
+//   }
+//   return answer;
+// }
+
+//* 다시 해보기
+function solution(students) {
+  let answer = 0;
+  let max = 0;
+
+  // max만 찾아서 비교
+  for (let el of students) {
+    if (max < el) {
+      max = el;
+      console.log(max); // [130, 135, 148, 150, 153] // 5
       answer++;
     }
   }
@@ -28,4 +45,6 @@ function solution(teacher, students) {
 
 const teacher = 8;
 const students = [130, 135, 148, 140, 145, 150, 150, 153];
-console.log(solution(teacher, students));
+
+const students2 = [170, 135, 148, 140, 145, 150, 150, 153]; // [170]  // 1
+console.log(solution(students));
