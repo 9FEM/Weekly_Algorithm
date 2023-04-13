@@ -14,7 +14,8 @@
 */
 
 function solution(str) {
-  let answer = 0;
+  const answer = parseInt(str.split('').filter((e) => /[0-9]/.test(e)).join(('')));
+	// string을 array로 바꾸고, 숫자만 쏙 빼낸 뒤에, 다시 string으로 바꾸고, 그걸 Int로 바꾼다.
 	return answer;
 }
 
@@ -22,8 +23,8 @@ function solution(str) {
 const testA = "g0en2T0s8eSoft";
 console.log(solution(testA)); // 208
 
-const testB = "";
-console.log(solution(testB)); // 
+const testB = "Hello1 World2 My0 Name7 Is Charlie";
+console.log(solution(testB)); // 1207
 
-const testC = "";
-console.log(solution(testC)); // 
+const testC = "00000000000my0birthday0is012ooooooo07";
+console.log(solution(testC)); // 1207

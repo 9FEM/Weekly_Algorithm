@@ -13,16 +13,41 @@
 */
 
 function solution(str) {
-  let answer = "";
-	return answer;
+	str = str.toUpperCase();
+	const reverseStr = str.split('').reverse().join('');
+	
+	if (str === reverseStr)
+		return "YES";
+	return "NO";
 }
-
 
 const testA = "gooG";
 console.log(solution(testA)); // YES
 
-const testB = "";
-console.log(solution(testB)); // 
+const testB = "helloworldDLROWOLLEH";
+console.log(solution(testB)); // YES
 
-const testC = "";
-console.log(solution(testC)); // 
+const testC = "MMMMMMAMMMMMM";
+console.log(solution(testC)); // YES
+
+const testD = "ABCEEFCBA";
+console.log(solution(testD)); // NO
+
+
+/*
+
+1. 인덱스 하나씩 비교
+
+2. indexOf 활용
+	const index = str.indexOf(reverseStr);
+
+	if (index != -1)
+		return "YES";
+	return "NO";
+
+3. 동등연산자(== | ===) 활용
+	if (str === reverseStr)
+		return "YES";
+	return "NO";
+
+*/

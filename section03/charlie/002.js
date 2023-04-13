@@ -13,17 +13,56 @@
 
 */
 
+// NOTE
+// 어떤 글에서 면접에서 펠린드롬 관련 문제가 나왔는데,
+// 조건이 'reverse() 사용 불가' 이었다고 한다.
+// 여유가 된다면 'reverse()' 사용 없이 풀어보자.
+
+
 function solution(str) {
-  let answer = "";
-	return answer;
+  alpha = str.split('').filter((e) => /[a-zA-Z]/.test(e)).join(('')).toUpperCase();
+	// array로 만들어서, filter로 알파벳만 남기고, 다시 string으로 만들어주고, 대문자로 바꿔준다.
+	const reverseAlpha = alpha.split('').reverse().join('');
+	// array로 만들어서, 뒤집고, 다시 string으로 만들어준다.
+
+	if (alpha === reverseAlpha)
+		return "YES";
+	return "NO";
 }
 
 
-const testA = "found7,time:study;Yduts;emit,7Dnuof";
+// REVIEW
+// // 'reverse()' 사용 안한 버전
+// function solution(str) {
+// 	alpha = str.split('').filter((e) => /[a-zA-Z]/.test(e)).join(('')).toUpperCase();
+	
+// 	for (let i = 0, j = alpha.length - 1; i <= j; i++, j--) {
+// 		if (alpha[i] !== alpha[j])
+// 			return "NO";
+// 	}
+// 	return "YES";
+// }
+
+
+const testA = "found7, time: study; Yduts; emit, 7Dnuof";
 console.log(solution(testA)); // YES
 
-const testB = "";
-console.log(solution(testB)); // 
+const testB = "A-123-B456A"
+console.log(solution(testB)); // YES
 
-const testC = "";
-console.log(solution(testC)); // 
+const testC = "Hell0000o1111oLL++E3H";
+console.log(solution(testC)); // YES
+
+const testD = "a123456789b";
+console.log(solution(testD)); // NO
+
+/*
+
+*입력 조건에서 '공백이 없는' 조건이 불필요하다고 생각합니다. (어차피 알파벳 이외의 문자는 무시하므로)
+
+1. 알파벳만 쏙 뽑아서 새로운 문자열(혹은 배열)을 만든다.
+	- 만든 새로운 문자열을 뒤집어 비교한다.
+
+2. 양 끝에서 하나씩 훑어가며 반복한다.
+
+*/
