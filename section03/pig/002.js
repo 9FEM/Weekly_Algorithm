@@ -14,16 +14,26 @@
 */
 
 function solution(str) {
+  const regexPattern = /[^a-zA-Z]+/g;
+  let s = str.toLowerCase().split("");
+  let reverseStr = s.reverse().join("").replace(regexPattern, "");
+  let x = str.toLowerCase().replace(regexPattern, "");
   let answer = "";
-	return answer;
-}
 
+  if (x === reverseStr) {
+    answer = "YES";
+  } else {
+    answer = "NO";
+  }
+
+  return answer;
+}
 
 const testA = "found7,time:study;Yduts;emit,7Dnuof";
 console.log(solution(testA)); // YES
 
-const testB = "";
-console.log(solution(testB)); // 
+const testB = "sdfsdfsdflkdsfov";
+console.log(solution(testB)); //
 
 const testC = "";
-console.log(solution(testC)); // 
+console.log(solution(testC)); //

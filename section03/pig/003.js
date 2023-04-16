@@ -14,16 +14,21 @@
 */
 
 function solution(str) {
-  let answer = 0;
-	return answer;
-}
+  const regexPattern = /\d+/g;
+  str = str.match(regexPattern);
 
+  if (str[0] === "0") {
+    str.shift();
+  }
+  str = str.join("");
+  return str;
+}
 
 const testA = "g0en2T0s8eSoft";
 console.log(solution(testA)); // 208
 
-const testB = "";
-console.log(solution(testB)); // 
+const testB = "asdasd5gdfag2dfgdfg6";
+console.log(solution(testB)); //526
 
-const testC = "";
-console.log(solution(testC)); // 
+const testC = "afa3ds4f";
+console.log(solution(testC)); //34

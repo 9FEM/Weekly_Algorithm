@@ -12,17 +12,26 @@
 
 */
 
+//전부 다 소문자로 돌리고 기존 문자열이랑 뒤집은 문자열이랑 비교?
 function solution(str) {
+  let s = str.toLowerCase().split("");
+  let reverseStr = s.reverse().join("");
+  let x = str.toLowerCase();
   let answer = "";
-	return answer;
-}
 
+  if (x === reverseStr) {
+    answer = "YES";
+  } else {
+    answer = "NO";
+  }
+  return answer;
+}
 
 const testA = "gooG";
 console.log(solution(testA)); // YES
 
-const testB = "";
-console.log(solution(testB)); // 
+const testB = "goddfog";
+console.log(solution(testB)); //
 
 const testC = "";
-console.log(solution(testC)); // 
+console.log(solution(testC)); //
