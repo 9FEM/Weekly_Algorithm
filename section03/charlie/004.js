@@ -12,6 +12,22 @@
 
 function solution(str, ch) {
   const answer = [];
+
+	for (let i = 0; i < str.length; i++) {
+		if (str[i] == ch) { // 현재 값이 ch와 같으면 0 넣고 다시 반복한다.
+			answer.push(0);
+			continue;
+		}
+
+		let min = str.length;
+		for (let j = 0; j < str.length; j++) { // 아니라면 반복문으로 탐색
+			if (str[j] == ch) {
+				min = Math.min(min, Math.abs(j - i)); // 인덱스 값의 차의 절대값(abs)과 min 을 비교하며 최솟값을 찾는다.
+			}
+		}
+		answer.push(min);
+	}
+	
 	return answer;
 }
 
@@ -20,10 +36,21 @@ const stringA = "teachermode";
 const charA = "e";
 console.log(solution(stringA, charA)); // [1, 0, 1, 2, 1, 0, 1, 2, 2, 1, 0]
 
-const stringB = "";
-const charB = "";
-console.log(solution(stringB, charB)); // 
+const stringB = "ababababab";
+const charB = "a";
+console.log(solution(stringB, charB)); // [0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
 
-const stringC = "";
-const charC = "";
-console.log(solution(stringC, charC)); // 
+const stringC = "ahellogoodworld";
+const charC = "a";
+console.log(solution(stringC, charC)); // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+
+const stringD = "agggggga";
+const charD = "a";
+console.log(solution(stringD, charD)); // [0, 1, 2, 3, 3, 2, 1, 0]
+
+/*
+
+분명 다른 방법이 있을 것 같은데
+전혀 생각나지 않았습니다.
+
+*/

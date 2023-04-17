@@ -11,7 +11,22 @@
 */
 
 function solution(str) {
-  let answer = "";
+	let answer = [];
+	answer.push(str[0])
+	
+	let count = 0;
+	for (const x of str) {
+		if (answer[answer.length - 1] === x) // 반복하면서 같은 문자면 count + 1
+			count++;
+		else { // 다른 문자가 나오면 그때 지금까지 쌓아온 count 와 새로운 문자를 넣어준다.
+			answer.push(count);
+			answer.push(x);
+			count = 1;
+		}
+	}
+	answer.push(count); // 마지막 문자는 숫자가 안들어가기 때문에 넣어줘야 한다.
+
+	answer = answer.filter((el) => (el !== 1)).join(''); // 배열을 문자열로 바꿔주는 동시에 1이 있다면 지워준다.
 	return answer;
 }
 
@@ -19,8 +34,8 @@ function solution(str) {
 const testA = "KKHSSSSSSSE";
 console.log(solution(testA)); // K2HS7E
 
-const testB = "";
-console.log(solution(testB)); // 
+const testB = "ABCDEFFFFFFF";
+console.log(solution(testB)); // ABCDEF7
 
-const testC = "";
-console.log(solution(testC)); // 
+const testC = "AABBAABBAA";
+console.log(solution(testC)); // A2B2A2B2A2
