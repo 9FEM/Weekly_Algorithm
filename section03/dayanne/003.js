@@ -14,8 +14,8 @@
 */
 
 function solution(str) {
-  let answer = str.replaceAll(/[^0-9]/g, '');
-  return answer[0] === '0' ? answer.substr(1) : answer;
+  let answer = parseInt(str.replaceAll(/[^0-9]/g, ''));
+  return answer;
 }
 
 const testA = 'g0en2T0s8eSoft';

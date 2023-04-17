@@ -11,7 +11,7 @@
 */
 
 // 정규표현식과 While
-function solution1(str) {
+function solution(str) {
   let answer = '';
   let copyStr = str.slice();
   let i = 0;
