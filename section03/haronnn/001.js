@@ -12,18 +12,20 @@
 
 */
 
+// 문제 이해를 잘못함.. 근데 병현님께도 잘못 알려드렸는데 큰일이다.
+
 function solution(str) {
   // 아예 소문자로 바꿔서 비교하기
-  const first = str.charAt(0).toLowerCase(); // 첫번째 친구
-  const last = str.charAt(str.length - 1).toLowerCase(); // 마지막 친구
+  const string = str.toLowerCase(); // 첫번째 친구
+  const reverseString = str.split("").reverse().join("").toLowerCase(); // 마지막 친구
 
-  return first === last ? "YES" : "NO";
+  return string === reverseString ? "YES" : "NO";
 }
 
 const testA = "gooG";
 console.log(solution(testA)); // YES
 
-const testB = "Tomatot";
+const testB = "tooT";
 console.log(solution(testB)); // YES
 
 const testC = "banana";
