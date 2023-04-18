@@ -15,12 +15,8 @@
 
 function solution(str) {
   const regexPattern = /\d+/g;
-  str = str.match(regexPattern);
+  str = parseInt(str.match(regexPattern).join(""));
 
-  if (str[0] === "0") {
-    str.shift();
-  }
-  str = str.join("");
   return str;
 }
 
