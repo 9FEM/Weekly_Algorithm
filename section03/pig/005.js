@@ -14,22 +14,46 @@
 
 function solution(str) {
   let answer = [];
-  let count = 1;
-
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] === str[i + 1]) {
-      count++;
+  let strArr = str.split("");
+  let count = 0;
+  for (let i = 0; i < strArr.length; i++) {
+    count = 0;
+    for (let j = i; j < strArr.length; j++) {
+      if (strArr[i] === strArr[j]) {
+        count++;
+      } else break;
+    }
+    if (count > 1) {
+      answer.push(strArr[i], count);
+      i += count - 1;
     } else {
-      answer.push(str[i]);
-      if (count > 1) {
-        answer.push(count);
-      }
-      count = 1;
+      answer.push(strArr[i]);
     }
   }
-
-  return answer.join("");
+  answer = answer.join("");
+  return answer;
 }
+// 위에 코드로 해결..!
+// 도경님 쵝오!
+
+// function solution(str) {
+//   let answer = [];
+//   let count = 1;
+
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] === str[i + 1]) {
+//       count++;
+//     } else {
+//       answer.push(str[i]);
+//       if (count > 1) {
+//         answer.push(count);
+//       }
+//       count = 1;
+//     }
+//   }
+
+//   return answer.join("");
+// }
 
 const testA = "KKHSSSSSSSE";
 console.log(solution(testA)); // K2HS7E
