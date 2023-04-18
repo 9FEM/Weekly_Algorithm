@@ -12,29 +12,6 @@
 
 */
 
-// function solution(str) {
-//   let answer = [];
-//   let strArr = str.split("");
-//   let count = 0;
-//   for (let i = 0; i < strArr.length; i++) {
-//     count = 0;
-//     for (let j = i; j < strArr.length; j++) {
-//       if (strArr[i] === strArr[j]) {
-//         count++;
-//       }
-//     }
-//     if (count > 1) {
-//       answer.push(strArr[i], count);
-//       i += count - 1;
-//     } else {
-//       answer.push(strArr[i]);
-//     }
-//   }
-//   answer = answer.join("");
-//   return answer;
-// }
-// 위에 코드로 해결해주실분..
-
 function solution(str) {
   let answer = [];
   let count = 1;
