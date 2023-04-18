@@ -10,31 +10,32 @@
 
 */
 
-// 정규표현식과 While
-function solution(str) {
+// While
+function solution1(str) {
   let answer = '';
-  let copyStr = str.slice();
   let i = 0;
 
-  while (i < copyStr.length) {
-    const reg = new RegExp(str[i], 'g');
-    const count = copyStr.match(reg).length;
-    if (count > 1) {
-      answer += str[i] + count;
-      i += count;
-    } else {
-      answer += str[i];
-      i++;
+  while (i < str.length) {
+    let j = i + 1;
+    while (j < str.length && str[i] === str[j]) {
+      j++;
     }
+    if (i === j - 1) {
+      answer += str[i];
+    } else {
+      answer += str[i] + (j - i);
+    }
+    i = j;
   }
+
   return answer;
 }
 
 const testA = 'KKHSSSSSSSE';
-console.log(solution(testA)); // K2HS7E
+console.log(solution1(testA)); // K2HS7E
 
 const testB = 'KKKKKKKKKKKK9';
-console.log(solution(testB)); // K129
+console.log(solution1(testB)); // K129
 
-const testC = 'ABCDEFG';
-console.log(solution(testC)); // ABCDEFG
+const testC = 'AABBAABBAA';
+console.log(solution1(testC)); // A2B2A2B2A2
