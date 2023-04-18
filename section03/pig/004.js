@@ -12,7 +12,7 @@
 //카운트를 사용해서 해당 문자가 나올때까지 +1? 근데 이러면 반대쪽에 있는 경우를 고려해야되는데
 function solution(str, ch) {
   const answer = [];
-  let count = 0;
+  let count = 100;
   let strArr = str.split("");
 
   for (let i = 0; i < strArr.length; i++) {
@@ -40,7 +40,7 @@ const stringA = "teachermode";
 const charA = "e";
 console.log(solution(stringA, charA)); // [1, 0, 1, 2, 1, 0, 1, 2, 2, 1, 0]
 
-const stringB = "bananaapple";
+const stringB = "zzzzzzza";
 const charB = "a";
 console.log(solution(stringB, charB));
 // [
