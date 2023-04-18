@@ -15,6 +15,13 @@ function solution(str) {
       }
       count = 1; // 초기화
     }
+
+    // 문자열의 끝에서도 결과를 반환하도록 종료 조건문 추가
+    if (i === str.length - 1) {
+      if (count > 1) {
+        answer += count;
+      }
+    }
   }
   return answer;
 }
