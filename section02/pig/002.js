@@ -24,19 +24,38 @@
 // }
 // 잘못된 풀이 ㅠ
 
-function solution(n, arr) {
-  //  첫번째 친구
-  let count = 1;
-  let result = arr[0];
+// function solution(n, arr) {
+//   //  첫번째 친구
+//   let count = 1;
+//   let result = arr[0];
 
-  for (let i = 0; i < n; i++) {
-    // 바로 앞과 뒤 친구를 비교하고 앞에서 제일 컷던 친구와도 비교하여 카운트.
-    if (arr[i] < arr[i + 1] && arr[i + 1] > result) {
-      result = arr[i + 1];
-      count++;
+//   for (let i = 0; i < n; i++) {
+//     // 바로 앞과 뒤 친구를 비교하고 앞에서 제일 컷던 친구와도 비교하여 카운트.
+//     if (arr[i] < arr[i + 1] && arr[i + 1] > result) {
+//       result = arr[i + 1];
+//       count++;
+//     }
+//   }
+//   console.log(count);
+// }
+
+// const arr = [130, 135, 138, 140, 145, 150, 150, 153];
+// solution(8, arr);
+
+function solution(teacher, students) {
+  let answer = 0;
+
+  for (let i = 0; i < teacher; i++) {
+    if (students[i] < students[i + 1]) {
+      answer++;
     }
   }
-  console.log(count);
+  return answer;
 }
-const arr = [130, 135, 138, 140, 145, 150, 150, 153];
-solution(8, arr);
+
+const teacher = 8;
+const students = [180, 135, 148, 140, 145, 150, 150, 153];
+console.log(solution(teacher, students));
+// const num = 8;
+// const arr = [130, 170, 148, 140, 145, 150, 150, 153];
+// console.log(solution(arr));
