@@ -10,16 +10,35 @@
 
 */
 
+// function solution(str) {
+//   let answer = "";
+//   let count = 1; // 1부터 세봅시다
+
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] === str[i + 1]) {
+//       count++; // i번째와 i옆번째가 같다면 count 증가
+//     } else {
+//       // 현재 문자랑 다음 문자가 다르면은 현재 문자와 count를 추가
+//       answer += str[i] + (count > 1 ? count : ""); // count가 1이면 숫자를 붙이지 않음
+//       count = 1; // count는 초기화
+//     }
+//   }
+
+//   return answer;
+// }
+
+//* 다시 해봅시다
+// 다연님 추천
 function solution(str) {
   let answer = "";
   let count = 1; // 1부터 세봅시다
 
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] === str[i + 1]) {
+  for (let i = 1; i <= str.length; i++) {
+    if (str[i - 1] === str[i]) {
       count++; // i번째와 i옆번째가 같다면 count 증가
     } else {
       // 현재 문자랑 다음 문자가 다르면은 현재 문자와 count를 추가
-      answer += str[i] + (count > 1 ? count : ""); // count가 1이면 숫자를 붙이지 않음
+      answer += str[i - 1] + (count > 1 ? count : ""); // count가 1이면 숫자를 붙이지 않음
       count = 1; // count는 초기화
     }
   }
