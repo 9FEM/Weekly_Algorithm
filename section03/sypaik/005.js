@@ -5,24 +5,15 @@
 function solution(str) {
   let answer = "";
   let count = 1; // 기본으로 count
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] === str[i + 1]) {
+  for (let i = 1; i <= str.length; i++) {
+    if (str[i - 1] === str[i]) {
       count++;
     } else {
-      answer += str[i];
-      if (count > 1) {
-        answer += count;
-      }
+      answer += str[i - 1] + (count > 1 ? count : "");
       count = 1; // 초기화
     }
-
-    // 문자열의 끝에서도 결과를 반환하도록 종료 조건문 추가
-    if (i === str.length - 1) {
-      if (count > 1) {
-        answer += count;
-      }
-    }
   }
+
   return answer;
 }
 
