@@ -8,7 +8,84 @@
 ### 참고 자료
 - 자바스크립트로 하는 자료 구조와 알고리즘
 
-<hr><br>
+### 스터디 진행
+- 매주 일정한 문제를 같이 풀고
+- 매주 자료구조를 공부하고
+- 코드리뷰를 통해 부족한 점을 채워 나가는 스터디
+
+
+### Contributors
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/d-charlie-kim"
+        ><img
+          src="https://avatars.githubusercontent.com/d-charlie-kim"
+          width="100px;"
+          alt=""
+        /><br /><sub><b>찰리</b></sub></a
+      ><br />
+    </td>
+       <td align="center">
+      <a href="https://github.com/ChoByungHyun"
+        ><img
+          src="https://avatars.githubusercontent.com/ChoByungHyun"
+          width="100px;"
+          alt=""
+        /><br /><sub><b>PIG</b></sub></a
+      ><br />
+    </td>
+    <td align="center">
+      <a href="https://github.com/Da-Youn"
+        ><img
+          src="https://avatars.githubusercontent.com/Da-Youn"
+          width="100px;"
+          alt=""
+        /><br /><sub><b>다연</b></sub></a
+      ><br />
+      </td>
+    <td align="center">
+      <a href="https://github.com/doong2imdang"
+        ><img
+          src="https://avatars.githubusercontent.com/doong2imdang"
+          width="100px;"
+          alt=""
+        /><br /><sub><b>둥1</b></sub></a
+      ><br />
+    </td>
+    <td align="center">
+      <a href="https://github.com/haron-lee"
+        ><img
+          src="https://avatars.githubusercontent.com/haron-lee"
+          width="100px;"
+          alt=""
+        /><br /><sub><b>도하</b></sub></a
+      ><br />
+    </td>
+      
+  <td align="center">
+      <a href="https://github.com/sy412"
+        ><img
+          src="https://avatars.githubusercontent.com/sy412"
+          width="100px;"
+          alt=""
+        /><br /><sub><b>소연</b></sub></a
+      ><br />
+    </td>
+  <td align="center">
+      <a href="https://github.com/sypaik-dev"
+        ><img
+          src="https://avatars.githubusercontent.com/sypaik-dev"
+          width="100px;"
+          alt=""
+        /><br /><sub><b>수연</b></sub></a
+      ><br />
+    </td>
+  </tr>
+</table>
+
+
+<br><hr><br>
 
 ## 🚧 주의
 
