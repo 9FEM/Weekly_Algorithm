@@ -21,7 +21,7 @@
       <a href="https://github.com/d-charlie-kim"
         ><img
           src="https://avatars.githubusercontent.com/d-charlie-kim"
-          width="100px;"
+          width="150px;"
           alt=""
         /><br /><sub><b>찰리</b></sub></a
       ><br />
@@ -30,7 +30,7 @@
       <a href="https://github.com/ChoByungHyun"
         ><img
           src="https://avatars.githubusercontent.com/ChoByungHyun"
-          width="100px;"
+          width="150px;"
           alt=""
         /><br /><sub><b>PIG</b></sub></a
       ><br />
@@ -39,7 +39,7 @@
       <a href="https://github.com/Da-Youn"
         ><img
           src="https://avatars.githubusercontent.com/Da-Youn"
-          width="100px;"
+          width="150px;"
           alt=""
         /><br /><sub><b>다연</b></sub></a
       ><br />
@@ -48,7 +48,7 @@
       <a href="https://github.com/doong2imdang"
         ><img
           src="https://avatars.githubusercontent.com/doong2imdang"
-          width="100px;"
+          width="150px;"
           alt=""
         /><br /><sub><b>둥1</b></sub></a
       ><br />
@@ -57,7 +57,7 @@
       <a href="https://github.com/haron-lee"
         ><img
           src="https://avatars.githubusercontent.com/haron-lee"
-          width="100px;"
+          width="150px;"
           alt=""
         /><br /><sub><b>도하</b></sub></a
       ><br />
@@ -67,7 +67,7 @@
       <a href="https://github.com/sy412"
         ><img
           src="https://avatars.githubusercontent.com/sy412"
-          width="100px;"
+          width="150px;"
           alt=""
         /><br /><sub><b>소연</b></sub></a
       ><br />
@@ -76,7 +76,7 @@
       <a href="https://github.com/sypaik-dev"
         ><img
           src="https://avatars.githubusercontent.com/sypaik-dev"
-          width="100px;"
+          width="150px;"
           alt=""
         /><br /><sub><b>수연</b></sub></a
       ><br />
@@ -85,7 +85,7 @@
 </table>
 
 
-<br><hr><br>
+<hr><br>
 
 ## 🚧 주의
 
