@@ -13,7 +13,7 @@ N개의 자연수가 입력되면 각 자연수를 뒤집은 후 그 뒤집은 �
 
 */
 
-function isDecimal(num) { // 소수 판단
+function isPrime(num) { // 소수 판단
 	if (num == 1)
 		return false;
 
@@ -29,7 +29,7 @@ function solution(N, numbers) {
 
 	for (const x of numbers) {
 		let reverse = parseInt((x + '').split('').reverse().join(''));  // 숫자를 뒤집는데, 001은 1로 바꿔준다.
-		if (isDecimal(reverse))
+		if (isPrime(reverse))
 			answer.push(reverse);
 	}
 
