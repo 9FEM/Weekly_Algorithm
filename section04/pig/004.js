@@ -18,17 +18,17 @@
 */
 function solution(N, M, numbers) {
   let answer = 0;
-  let max = M;
-  let count = 0;
-  numbers.sort((a, b) => a[0] - b[0]); //오름차순 정렬
-  for (let i = 1; i < N; i++) {
-    let money = max - (numbers[i][0] / 2 + numbers[i][1]); //쿠폰 쓰고
-    count = 0;
+  numbers.sort((a, b) => a[0] + a[1] - (b[0] + b[1])); //오름차순 정렬
+  for (let i = 0; i < N; i++) {
+    let money = M - (numbers[i][0] / 2 + numbers[i][1]); //쿠폰 쓰고
+    let count = 1;
     for (let j = 0; j < N; j++) {
       // 나머지 경우의 수 루프
       if (j !== i && numbers[j][0] + numbers[j][1] > money) {
         break;
-      } else if (j !== i && numbers[j][0] + numbers[j][1] <= money) {
+      }
+      if (j !== i && numbers[j][0] + numbers[j][1] <= money) {
+        money -= numbers[j][0] + numbers[j][1];
         count++;
       }
     }
@@ -46,11 +46,30 @@ const testA = [
 ];
 console.log(solution(5, 28, testA)); // 4
 
-// const testB = [];
-// console.log(solution(testB)); //
+const testB = [
+  [1, 1],
+  [2, 1],
+  [3, 1],
+  [8, 1],
+];
+console.log(solution(4, 14, testB)); //4
 
-// const testC = [];
-// console.log(solution(testC)); //
+const testC = [
+  [5, 20],
+  [1, 50],
+  [2, 30],
+  [10, 15],
+  [30, 5],
+  [20, 10],
+];
+console.log(solution(6, 20, testC)); // 1
 
-// const testD = [];
-// console.log(solution(testD)); //
+const testD = [
+  [5, 50],
+  [50, 0],
+  [5, 20],
+  [10, 3],
+  [10, 2],
+  [3, 3],
+];
+console.log(solution(6, 50, testD)); // 3
