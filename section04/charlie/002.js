@@ -17,7 +17,7 @@ function isPrime(num) { // 소수 판단
 	if (num == 1)
 		return false;
 
-	for (let i = 2; i < Math.sqrt(num); i++) {  // 제곱근까지 나눠지는 수 판단
+	for (let i = 2; i <= Math.sqrt(num); i++) {  // 제곱근까지 나눠지는 수 판단 (등호 안 넣고 < 하면 안됩니다.)
 		if (num % i == 0)
 			return false;
 	}
