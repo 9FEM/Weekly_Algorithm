@@ -43,7 +43,7 @@ const K = 3;
 const testA = [13, 15, 34, 23, 45, 65, 33, 11, 26, 42];
 console.log(solution(N, K, testA)); // 143
 
-const NN = 0;
-const KK = 0;
-const testB = [];
-console.log(solution(NN, KK, testB)); //
+const NN = 5;
+const KK = 2;
+const testB = [45, 13, 22, 33, 12];
+console.log(solution(NN, KK, testB)); // 91

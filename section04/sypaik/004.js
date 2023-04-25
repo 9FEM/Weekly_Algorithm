@@ -20,30 +20,25 @@
 
 function solution(numbers) {
   numbers.sort((a, b) => a[0] + a[1] - (b[0] + b[1]));
-  let budget = numbers[0][1];
 
   let answer = 0;
+  let budget = numbers[0][1];
   for (let i = 1; i < numbers.length; i++) {
-    let discounted = numbers[i][0] * 0.5 + numbers[i][1]; // 할인된 가격
-    let remaining = budget - discounted;
-    let num = 1;
-
-    for (let j = 0; j < numbers.length; j++) {
-      if (remaining - numbers[j][1] >= 0) {
-        remaining -= numbers[j][1];
-        num++;
-      } else {
-        break;
-      }
+    const [price, shipping] = numbers[i];
+    let discount = price * 0.5 + shipping; // 할인된 가격
+    if (budget >= discount) {
+      budget -= discount;
+      answer++;
+    } else {
+      break;
     }
-    count = Math.max;
   }
-  return count;
+  return answer;
 }
 
 /* 접근방법 */
 // 1. 상품 가격이 가장 비싼게 50%할인
-// 2. 싼 가격의 상품을 선택해가야한다 ==> 상품의 가격 정렬
+// 2. 싼 가격의 상품을 선택해가야한다 ==> 상품의 가격 정렬 sort
 // 3. 상품을 선택하면서 남은 예산으로 다른 상품들을 살 수 있는지 계산
 
 const testA = [
@@ -56,10 +51,23 @@ const testA = [
 ];
 console.log(solution(testA)); // 4
 
-const testB = [];
-console.log(solution(testB)); //
+const testB = [
+  [4, 18],
+  [2, 4],
+  [6, 2],
+  [3, 3],
+  [1, 1],
+];
+console.log(solution(testB)); // 4
 
-const testC = [];
+const testC = [
+  [3, 12],
+  [1, 2],
+  [2, 5],
+  [4, 3],
+  [5, 4],
+  [6, 5],
+];
 console.log(solution(testC)); //
 
 const testD = [];

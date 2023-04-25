@@ -35,14 +35,14 @@ const A = 7;
 const testA = [128, 460, 603, 40, 521, 137, 123];
 console.log(solution(A, testA)); // 137
 
-const B = 0;
-const testB = [];
-console.log(solution(B, testB)); //
+const B = 4;
+const testB = [123, 9, 5678, 99, 1234];
+console.log(solution(B, testB)); // 5678
 
-const C = 0;
-const testC = [];
-console.log(solution(C, testC)); //
+const C = 4;
+const testC = [21, 11, 34, 80];
+console.log(solution(C, testC)); // 80
 
-const D = 0;
-const testD = [];
-console.log(solution(D, testD)); //
+const D = 9;
+const testD = [79, 90, 42, 110, 450, 210, 40, 99, 10];
+console.log(solution(D, testD)); // 99

@@ -17,21 +17,41 @@ M번의 수학성적이 주어지면 멘토와 멘티가 되는 짝을 만들 �
 첫 번째 줄에 짝을 만들 수 있는 총 경우를 출력합니다.
 */
 
-function solution(N, M, numbers) {
+function solution(test) {
   let answer = 0;
-  for (let i = 0; i < M; i++) {
-    for (let j = 0; j < N; j++) {
-      if (numbers[i][j] === j + 1) {
+  let N = test[0].length;
+  let M = test.length;
+  let tmp = [];
+
+  for (let i = 1; i <= N; i++) {
+    for (let j = 1; j <= N; j++) {
+      if (i === j) {
+        continue;
+      }
+      let count = 0;
+      for (let k = 0; k < M; k++) {
+        let mentorRank = 0;
+        let menteeRank = 0;
+        for (let l = 0; l < N; l++) {
+          if (test[k][l] === i) mentorRank = l + 1;
+          if (test[k][l] === j) menteeRank = l + 1;
+        }
+        if (mentorRank < menteeRank) count++;
+      }
+      if (count === M) {
         answer++;
+        tmp.push([i, j]);
       }
     }
   }
+  return answer;
 }
 
 /* 접근방법 */
-// 1. M번의 테스트만큼의 배열을 먼저 돌아야한다. (for문)
-// 2. 하나의 배열 안에 N-1만큼의 배열을 돌아야한다.(for문)
-// 3.
+// 1. 멘토와 멘티가 될 수 있는 모든 경우의 수는?
+// 2. 멘토와 멘티의 번호 찾기
+// 3. 시험 등수 찾기 ==> 멘토와 멘티가 짝이 될 수 있는 경우
+// 4. 단, 멘토는 멘티보다 모든 테스트에서 등수가 높아야함
 
 const N = 4;
 const M = 3;
@@ -40,9 +60,12 @@ const testA = [
   [4, 3, 2, 1],
   [3, 1, 4, 2],
 ];
-console.log(solution(N, M, testA)); // 3
+console.log(solution(testA)); // 3
 
-const NN = 0;
-const MM = 0;
-const testB = [];
-console.log(solution(NN, MM, testB)); //
+const NN = 5;
+const MM = 2;
+const testB = [
+  [1, 2, 3, 4, 5],
+  [2, 1, 5, 3, 4],
+];
+console.log(solution(testB)); // 7

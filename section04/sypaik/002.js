@@ -44,14 +44,14 @@ const A = 9;
 const testA = [32, 55, 62, 20, 250, 370, 200, 30, 100];
 console.log(solution(A, testA)); // [23, 2, 73, 2, 3]
 
-const B = 0;
-const testB = [];
-console.log(solution(B, testB)); //
+const B = 4;
+const testB = [34, 83, 90, 11, 23];
+console.log(solution(B, testB)); // [43, 9, 11]
 
-const C = 0;
-const testC = [];
-console.log(solution(C, testC)); //
+const C = 6;
+const testC = [10, 40, 50, 30, 98, 45];
+console.log(solution(C, testC)); // [4, 5, 3, 89]
 
-const D = 0;
-const testD = [];
-console.log(solution(D, testD)); //
+const D = 4;
+const testD = [21, 34, 76, 53];
+console.log(solution(D, testD)); // [43, 67, 35]
