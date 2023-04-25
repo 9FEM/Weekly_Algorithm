@@ -34,6 +34,7 @@ function solution(numbers) {
     -> 조건문 추가
     */
 
+    // 상품가격이 제일 큰 값 인덱스 찾기
     for (let i = 1; i < numbers.length; i++) {
       if (max < numbers[i][0]) {
         max = numbers[i][0];
@@ -50,6 +51,7 @@ function solution(numbers) {
     }
     price.sort((a, b) => a - b);
 
+    // buget보다 커질 때까지 answer++로 개수세기
     for (let i = 0; i < price.length; i++) {
       sum += price[i];
       if (sum <= budget) {

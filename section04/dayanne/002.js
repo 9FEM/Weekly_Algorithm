@@ -12,6 +12,8 @@ N개의 자연수가 입력되면 각 자연수를 뒤집은 후 그 뒤집은 �
 첫 줄에 뒤집은 소수를 출력합니다. 출력순서는 입력된 순서대로 출력합니다.
 
 */
+
+// 소수인지 구별하는 함수
 function isPrime(num) {
   if (num < 2) return false;
   if (num === 2) return true;
