@@ -30,7 +30,8 @@ function solution(N, K, numbers) {
     }
   }
 
-  sumArr.sort((a, b) => b - a); // 내림차순으로 정렬
+  let sumSet = new Set(sumArr);
+  sumArr = Array.from(sumSet).sort((a, b) => b - a); // 내림차순으로 정렬
   return sumArr[K - 1]; // 0번째부터 이기에 -1 해준것, K번째 친구 찾기
 }
 
@@ -44,7 +45,7 @@ const KK = 2;
 const testB = [25, 14, 34, 44, 34];
 console.log(solution(NN, KK, testB)); // 103
 
-const NNN = 12;
-const KKK = 4;
-const testC = [48, 34, 23, 49, 12, 25, 52, 47, 57, 52, 62, 39];
-console.log(solution(NNN, KKK, testC)); // 167
+const NNN = 10;
+const KKK = 8;
+const testC = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log(solution(NNN, KKK, testC)); // 20
