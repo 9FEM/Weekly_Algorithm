@@ -19,21 +19,30 @@
 */
 
 function solution(numbers) {
+  const budget = numbers[0][1]; // 가지고 있는 예산
+  const n = numbers[0][0]; // 상품의 개수
+
+  numbers.shift(); 
+
   numbers.sort((a, b) => a[0] + a[1] - (b[0] + b[1]));
 
-  let answer = 0;
-  let budget = numbers[0][1];
-  for (let i = 1; i < numbers.length; i++) {
-    const [price, shipping] = numbers[i];
-    let discount = price * 0.5 + shipping; // 할인된 가격
-    if (budget >= discount) {
-      budget -= discount;
-      answer++;
-    } else {
-      break;
+  let answer = 0; // 최대 학생 수
+  let sum = 0;
+  let count = 0;
+
+  // [피드백]: 할인하는 상품을 골고루 선택하며 확인하기
+
+  for (let i = 0; i < n; i++) {
+    let discount = numbers[i][0] / 2;
+    let discountedPrice = discount + numbers[i][1];
+
+    if(discountedPrice > budget) {
+      continue; // 할인 가격이 예산보다 크면 넘어가~!
     }
-  }
-  return answer;
+
+    sum += discount + numbers[i][1];
+    count += 1;
+  
 }
 
 /* 접근방법 */

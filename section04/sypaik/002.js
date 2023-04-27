@@ -26,7 +26,8 @@ function isPrime(num) {
   if (num < 2) {
     return false;
   }
-  for (let i = 2; i < parseInt(Math.sqrt(num)); i++) {
+  for (let i = 2; i <= parseInt(Math.sqrt(num)); i++) {
+    // [반례]: num이 4라면, true를 반환하고 소수로 판단! ==> 등호를 추가해야한다
     if (num % i == 0) {
       return false;
     }
