@@ -28,23 +28,26 @@ function solution(numbers) {
 
   let answer = 0; // 최대 학생 수
   let sum = 0;
-  let count = 0;
+ 
 
   // [피드백]: 할인하는 상품을 골고루 선택하며 확인하기
+  // i : 할인 받는 상품
+  // j : 할인받지 않는 상품
+  for(let i = 0; i < n; i++) {
+    const discount = numbers[i][0] / 2 + numbers[i][1]; // 할인된 가격 + 배송비
+     let count = 1;
+     let sum = 0;
+     for(let j = 0; j < n; j++) {
+       if(i === j) continue;
+       sum += numbers[j][0] + numbers[j][1]; // 할인받지 않은 가격 + 배송비
+       if(sum <= budget) count++;
+     
+  }
 
-  for (let i = 0; i < n; i++) {
-    let discount = numbers[i][0] / 2;
-    let discountedPrice = discount + numbers[i][1];
-
-    if(discountedPrice > budget) {
-      continue; // 할인 가격이 예산보다 크면 넘어가~!
-    }
-
-    sum += discount + numbers[i][1];
-    count += 1;
-  
+  answer = Math.max(answer, count);
 }
-
+return answer;
+}
 /* 접근방법 */
 // 1. 상품 가격이 가장 비싼게 50%할인
 // 2. 싼 가격의 상품을 선택해가야한다 ==> 상품의 가격 정렬 sort
