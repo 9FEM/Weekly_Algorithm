@@ -18,50 +18,37 @@
 
 */
 function solution(numbers) {
-  let arr = numbers.slice();
-  let max = 0;
-  let maxIndex = 0;
-  let sum = 0;
+  let n = numbers[0][0];
+  let budget = numbers[0][1];
+  numbers.shift();
+
+  // 상품가격 + 배송비 더해준 값 정렬하기
+
+  numbers.sort((a, b) => a[0] + a[1] - (b[0] + b[1]));
+
   let answer = 0;
-  let budget = 0;
-  let price = [];
 
-  if (arr.length > 0) {
-    budget = arr[0][1];
-    /*
-    let budget = arr[0][1]; 를 사용 시
-    TypeError: Cannot read properties of undefined (reading '1') 라는 에러 
-    -> 조건문 추가
-    */
+  for (let i = 0; i < n; i++) {
+    let count = 1;
+    // 하나씩 할인 적용해보기
+    let total = numbers[i][0] / 2 + numbers[i][1];
+    if (total > budget) {
+      continue;
+    }
 
-    // 상품가격이 제일 큰 값 인덱스 찾기
-    for (let i = 1; i < numbers.length; i++) {
-      if (max < numbers[i][0]) {
-        max = numbers[i][0];
-        maxIndex = i;
+    for (let j = 0; j < n; j++) {
+      if (i === j) {
+        continue;
       }
-    }
-
-    // 제일 큰 값에 50% 할인쿠폰 적용
-    arr[maxIndex][0] = Math.floor(max / 2);
-
-    // 상품가격+배송비 오름차순 정렬
-    for (let i = 1; i < arr.length; i++) {
-      price.push(arr[i][0] + arr[i][1]);
-    }
-    price.sort((a, b) => a - b);
-
-    // buget보다 커질 때까지 answer++로 개수세기
-    for (let i = 0; i < price.length; i++) {
-      sum += price[i];
-      if (sum <= budget) {
-        answer++;
-      } else {
+      total += numbers[j][0] + numbers[j][1];
+      count++;
+      if (total > budget) {
+        count--;
         break;
       }
     }
+    answer = Math.max(answer, count);
   }
-
   return answer;
 }
 
@@ -82,6 +69,3 @@ const testB = [
   [10, 100],
 ];
 console.log(solution(testB)); // 3
-
-const testC = [];
-console.log(solution(testC)); //
