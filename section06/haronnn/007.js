@@ -18,11 +18,25 @@ C, G, E, A, D, B 순서로 짰다면 잘 못 설계된 수업계획이 됩니다
 
 */
 
+function solution(plan) {
+  const essential = plan.shift().split(''); // [ 'C', 'B', 'A' ]로 만들기
+  const studentsPlan = plan.join(''); // 남은 plan 값 string으로 만들기
 
-function solution() {
-	const answer = "";
-	return answer;
+  for (let el of studentsPlan) {
+    // 필수 과목을 포함하는지 확인하기
+    if (essential.includes(el)) {
+      // 포함되어있는데 현재 과목이 필수과목의 맨 앞 과목이 아니면 NO
+      // shift()로 essential에서 하나씩 뽑아내서 검사
+      if (el !== essential.shift()) return 'NO';
+    }
+  }
+  return essential.length > 0 ? 'NO' : 'YES';
 }
 
-const testA = ["CBA", "CBDAGE"];
+const testA = ['CBA', 'CBDAGE'];
 console.log(solution(testA)); // YES
+
+const testB = ['CBA', 'CADBGE'];
+console.log(solution(testB)); // NO
+
+//* 이것은 queue를 이용하면 될 것으로 보임
