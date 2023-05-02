@@ -14,8 +14,28 @@
 
 */
 
-function solution(s){
-	var answer = true;
+function solution(s) {
+  let answer = true;
+  let count = 0;
 
-	return answer;
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === "(") {
+      count++;
+    } else {
+      if (count > 0) {
+        count--;
+      } else {
+        answer = false;
+        break;
+      }
+    }
+  }
+  if (count > 0 || count < 0) {
+    answer = false;
+  }
+  return answer;
 }
+const str = ")))))";
+console.log(solution(str));
+const str1 = "(())()";
+console.log(solution(str1));
