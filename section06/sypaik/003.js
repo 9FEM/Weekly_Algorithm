@@ -24,30 +24,27 @@ moves 배열 각 원소들의 값은 1 이상이며 board 배열의 가로 크�
 
 */
 function solution(board, moves) {
-    var box=[];
-    var cnt = 0;
-    var answer = 0;
-
-    for(var i=0; i<moves.length; i++){
-        for(var j=0; j<board.length; j++){
-            if(board[j][moves[i]-1]!=0){
-                box.push(board[j][moves[i]-1]);
-                board[j][moves[i]-1] = 0;
-                break;
+    let stack = [];
+    let count = 0;
+    for(let i = 0; i < moves.length; i++) {
+        for(let j = 0; j < board.length; j++) {
+            if(board[j][moves[i]-1] != 0) { // 0이 아닌 board의 최상단에 위치한 인형 꺼내기
+                stack.push(board[j][moves[i]-1]);
+                board[j][moves[i]-1] = 0; // 꺼내면 0으로 초기화
+                break; // 뽑게 되면 벗어나~
             }
         }
-        if(box.length > 1){
-            for(var k=box.length-1; k>0; k--){
-                if(box[k] == box[k-1]){
-                    box.pop();
-                    box.pop();
-                    cnt += 2;
+                if(stack.length >= 2) {
+                    if(stack[stack.length-1] == stack[stack.length-2]) {
+                    count += 2;
+                    stack.pop(); // 빼내기
+                    stack.pop(); 
+                    }
                 }
             }
-        }
-    }
-    console.log(cnt);
-    answer = cnt;
-
-    return answer;
+    return count;
 }
+
+const boardA = [[0,0,0,0,0],[0,0,1,0,3],[0,2,5,0,1],[4,2,4,4,2],[3,5,1,3,1]]
+const movesA = [1,5,3,5,1,2,1,4]
+console.log(solution(boardA, movesA))
