@@ -44,7 +44,33 @@ function solutionB(s) {
   return answer;
 }
 
+// 풀이 3) 비정상 적인 출력 고려
+function solutionC(str) {
+  let stack = [];
+  let cnt = 0;
+
+  for (const x of str) {
+    if (x === ')' && cnt > 0) {
+      while (stack.pop() !== '(');
+      cnt--;
+    } else if (x === '(') {
+      cnt++;
+      stack.push(x);
+    } else {
+      stack.push(x);
+    }
+  }
+  return stack.join('');
+}
+
 const test = '(A(BC)D)EF(G(H)(IJ)K)LM(N)';
+const test2 = ')(ABCDE)(';
+const test3 = '((((((((';
+const test4 = ')))))))))';
 
 console.log(solutionA(test)); // EFLM
 console.log(solutionB(test)); // EFLM
+console.log(solutionC(test)); // EFLM
+console.log(solutionC(test2)); // )(
+console.log(solutionC(test3)); // '(((((((('
+console.log(solutionC(test4)); // ')))))))))'

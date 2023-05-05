@@ -14,6 +14,7 @@
 12
 */
 
+/* 계산 함수 풀이 ver */
 // 계산해 주는 함수
 function calculate(operation, num1, num2) {
   switch (operation) {
@@ -28,7 +29,7 @@ function calculate(operation, num1, num2) {
   }
 }
 
-function solution(postfix) {
+function solutionA(postfix) {
   const stack = [];
   for (let x of postfix) {
     // x가 숫자면 stack에 넣기
@@ -44,9 +45,29 @@ function solution(postfix) {
   return stack[0];
 }
 
+/* 생성자 함수 풀이 ver */
+function solutionB(postfix) {
+  const stack = [];
+
+  for (let i = 0; i < postfix.length; i++) {
+    const char = postfix[i];
+    if (!isNaN(char)) {
+      stack.push(char);
+    } else {
+      const b = stack.pop();
+      const a = stack.pop();
+      const result = new Function(`return ${a}${char}${b}`)();
+      stack.push(result);
+    }
+  }
+}
+
 const postfixA = '352+*9-';
 const postfixB = '324*+93/-';
 const postfixC = '79+12+/';
-console.log(solution(postfixA)); // 12
-console.log(solution(postfixB)); // 8
-console.log(solution(postfixC)); // 5.333333333333333
+console.log(solutionA(postfixA)); // 12
+console.log(solutionB(postfixA)); // 12
+console.log(solutionA(postfixB)); // 8
+console.log(solutionB(postfixB)); // 8
+console.log(solutionA(postfixC)); // 5.333333333333333
+console.log(solutionB(postfixC)); // 5.333333333333333

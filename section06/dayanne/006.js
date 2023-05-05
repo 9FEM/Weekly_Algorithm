@@ -23,7 +23,7 @@
 // 풀이 1)
 function solutionA(n, k) {
   // 왕자들의 번호로 배열 만들어놓기
-  let princes = new Array(n).fill(0).map((_, index) => index + 1);
+  const princes = new Array(n).fill(0).map((_, index) => index + 1);
   // k-1번째 위치를 저장
   let index = 0;
   while (princes.length > 1) {
@@ -37,7 +37,18 @@ function solutionA(n, k) {
 }
 
 // 풀이 2) 스택, 큐 활용
-// function solutionB(n, k) {}
+function solutionB(n, k) {
+  const princes = new Array(n).fill(0).map((_, index) => index + 1);
 
+  while (princes.length !== 1) {
+    for (let i = 0; i < k - 1; i++) {
+      const pass = princes.shift();
+      princes.push(pass);
+    }
+    princes.shift();
+  }
+
+  return princes[0];
+}
 console.log(solutionA(8, 3));
-// console.log(solutionB(8, 3));
+console.log(solutionB(8, 3));
