@@ -11,29 +11,23 @@
 */
 
 function solution(str) {
-	let answer = "";
-	let stack = [];
-	let s = [];
+  let stack = [];
+  let count = 0;
 
-	// 스택에 모든 문자열 추가
-	for (let x of str) {
-		stack.push(x);
-	}
-
-	// 스택에서 문자를 하나씩 꺼내며 괄호 안에 있는 문자열을 추출
-	for(let i = 0; i < str.length; i++) {
-		let bracket = stack.pop();
-
-		if(bracket === '(') {
-			while (s.pop() !== ')') {}
-		} else {
-			s.push(bracket)
-		}
-	}
-	answer = s.reverse().join('');
-
-	return answer;
+  for (x of str) {
+    if (x === ")" && count > 0) {
+      while (stack.pop() !== "(");
+      count--;
+    } else {
+      if (x === "(") {
+        count++;
+      }
+      stack.push(x);
+    }
+  }
+  return stack.join("");
 }
+
 
 const testA = "(A(BC)D)EF(G(H)(IJ)K)LM(N)";
 console.log(solution(testA)); // EFLM
@@ -46,6 +40,9 @@ console.log(solution(testC));  // ))))))
 
 const testD = "H(((())))I";
 console.log(solution(testD));  // HI
+
+const testE = "(((((";
+console.log(solution(testE)); // (((((
 
 
 // 접근 방법
