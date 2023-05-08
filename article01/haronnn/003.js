@@ -8,15 +8,31 @@ arr = [4, 4, 4, 3, 3] 이면 [4, 3] 을 return 합니다.
 
  */
 
-function solution(arr) {
-  var answer = [];
+//* 제발 기억하기
+// 이 i - 1과 i + 1로 비교할 경우 undefined가 출력될 수 있으므로 피해야함
+// function solution(arr) {
+//   var answer = [];
 
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] !== arr[i + 1]) {
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i - 1] !== arr[i]) {
+//       answer.push(arr[i]);
+//     }
+//   }
+
+//   return answer;
+// }
+
+function solution(arr) {
+  let answer = [arr[0]]; // 첫번째 원소 저장
+
+  // for문은 두 번째 원소부터 마지막 원소까지 반복
+  // 이렇게 하면 undefined가 출력될 일이 없다고 하는데..
+  for (let i = 1; i < arr.length; i++) {
+    // 현재 원소와 바로 이전 원소를 비교하여 같지 않을 때만 answer 배열에 추가
+    if (arr[i] !== arr[i - 1]) {
       answer.push(arr[i]);
     }
   }
-
   return answer;
 }
 
