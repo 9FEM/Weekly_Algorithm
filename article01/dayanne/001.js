@@ -15,8 +15,7 @@ function solution(numList, n) {
   // 각 숫자를 n만큼 뺀 후 n의 절대값을 기준으로 오름차순 정렬
   const numArr = numList.map((num) => num - n).sort((a, b) => Math.abs(a) - Math.abs(b));
   for (let i = 1; i < numArr.length; i++) {
-    if (Math.abs(numArr[i]) === Math.abs(numArr[i - 1]) && +numArr[i] + n > numArr[i - 1] + n) {
-      // numArr[i]와 numArr[i - 1] 비교
+    if (Math.abs(numArr[i]) === Math.abs(numArr[i - 1]) && numArr[i] > numArr[i - 1]) {
       // 두 숫자의 절대값이 같고 && 각각 n을 더했을 때 'numArr[i] + n'이 더 큰 경우
       // 두 숫자의 순서를 바꾼다.
       const prevNum = numArr[i];
