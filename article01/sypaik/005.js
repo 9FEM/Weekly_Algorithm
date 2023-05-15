@@ -35,7 +35,6 @@ function solution(numbers) {
         }
     }
         getPermutation(nums, '');
-
         return answer;
 }
 
