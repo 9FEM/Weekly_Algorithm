@@ -21,6 +21,15 @@ https://school.programmers.co.kr/learn/courses/30/lessons/132267
 
 */
 
+/** 1) while 반복문 */
 function solution(a, b, n) {
-	
+    let answer = 0; // (n / a 값이 1보다 작으면 그대로 0 반환)
+    while (n / a >= 1) {
+        // n / a 값이 1 이상이면 병 교환
+        answer += Math.floor(n / a) * b; // 교환해서 받은 콜라 병의 개수
+        n = Math.floor(n / a) * b + (n % a); // 받은 콜라 병의 개수와 교환하지 못하고 남은 콜라 병의 수
+    }
+    return answer;
 }
+
+/** 2) 재귀함수 */
