@@ -14,6 +14,9 @@ number는 2자리 이상, 1,000,000자리 이하인 숫자입니다.
 k는 1 이상 number의 자릿수 미만인 자연수입니다.
 */
 
+/*
+// 10번 시간초과 코드
+
 function solution(number, k) {
 	number = number.split('');
 	
@@ -34,6 +37,7 @@ function solution(number, k) {
 			number.pop();
 	return number.join('');
 }
+*/
 
 /*
 매 순간 어느 숫자를 뺴는 것이 제일 큰 수가 되는지 판단해야 한다.
@@ -45,5 +49,40 @@ function solution(number, k) {
 
 //FIXME
 여전히 10번 케이스에서 시간초과가 된다.
-어디서 최적화를 할 수 있을까~~~ 
+--> 매번 배열의 처음으로 돌아가서 앞, 뒤값을 비교하며 반복하는 것이 문제
+--> 한번 반복으로 끝낼 수 있게 해야한다.
+*/
+
+function solution(number, k) {
+	const answer = [];
+
+	for (let i = 0; i < number.length; i++) {
+		if (answer.length !== 0 && k > 0 && answer[answer.length - 1] < number[i]) {
+			answer.pop();
+			k--;
+			i--;
+			continue;
+		}
+		answer.push(number[i]);
+	}
+	while (k > 0) {
+		answer.pop();
+		k--;
+	}
+	return answer.join('');
+}
+
+console.log(solution('4177252841', 4)); // 77841
+
+/*
+숫자를 순서대로 앞에서부터 순서대로 넣어준다.
+현재 들어가 있는 숫자(앞)보다 이제 넣을 숫자(뒤)가 더 크면
+들어가 있는 숫자를 빼준다.
+(이때 k--)
+반복한다.
+
+전부 반복을 했는데 k가 남아있다면
+남아있는 숫자들은 모두 같은 숫자.
+
+k개수만큼 빼준다.
 */
