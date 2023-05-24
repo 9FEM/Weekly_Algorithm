@@ -17,31 +17,49 @@
 */
 
 function solution(N, arr) {
-	arr.sort((a,b) => {
-		if ()
-	})
-	let answer = 0;
-	return answer;
+	let startT = arr.map((el) => el[0]).sort((a,b) => (a - b)); // 시작 시간만 뽑아서 오름차순 정렬
+	let endT = arr.map((el) => el[1]).sort((a,b) => (a - b)); // 종료 시간만 뽑아서 오름차순 정렬
+
+	let count = 0, max = -1;
+	for (let i = 0, s = 0, e = 0; i < 73; i++) { // 총 시간 탐색
+		while (startT[s] === i) { // 시작 시간되면 해당 인원 수만큼 ++
+			count++;
+			s++;
+		}
+		while (endT[e] === i) { // 종료 시간되면 해당 인원 수만큼 --
+			count--;
+			e++;
+		}
+		if (count > max) // 매번 max 체크 해주기
+			max = count;
+	}
+	return max;
 }
 
 let numA = 5;
 let testA = [[14,18],[12,15],[15,20],[20,30],[5,14]];
 
-let numB = 5;
-let testB = [[14,18],[12,15],[15,20],[20,30],[5,14]];
+let numB = 10;
+let testB = [[2,10],[3,5],[4,8],[7,15],[1,5],[6,9],[10,11],[11,15],[5,8],[9,12]];
 
 let numC = 10;
-let testC = [[2,10],[3,5],[4,8],[7,15],[1,5],[6,8],[10,11],[11,15],[5,7],[9,12]];
+let testC = [[55,60],[60,70],[3,5],[8,15],[10,24],[5,8],[24,30],[30,32],[1,3],[35,50]];
 
-let numD = 5;
-let testD = [[14,18],[12,15],[15,20],[20,30],[5,14]];
+let numD = 10;
+let testD = [[2,10],[3,5],[4,8],[7,15],[1,5],[6,9],[4,11],[10,15],[5,8],[7,12]];
 
-let numE = 5;
-let testE = [[14,18],[12,15],[15,20],[20,30],[5,14]];
+let numE = 100000;
+let testE = [];
+for (let i = 0; i < 100000; i++) {
+	let left = Math.floor(Math.random() * 72);
+	let right = left + Math.ceil(Math.random() * (72 - left));
+	testE.push([left, right]);
+}
 
-
+console.time();
 console.log(solution(numA, testA)); // 2
-console.log(solution(numB, testB)); // 
-console.log(solution(numC, testC)); // 
-console.log(solution(numD, testD)); // 
-console.log(solution(numE, testE)); // 
+console.log(solution(numB, testB)); // 5
+console.log(solution(numC, testC)); // 2
+console.log(solution(numD, testD)); // 7
+console.log(solution(numE, testE)); // 정답은 매번 바뀌고 정확하지 않으나, 시간 보려고 넣음
+console.timeEnd();
