@@ -22,12 +22,30 @@ function solution(number, k) {
 					arr.pop();
 			}
 			arr.push(number[i]);
+			// console.log(arr);
+			// console.log(k);
 	}
 	// k가 0이 되기전에 종료되었을 경우 k개의 요소를 제거하기위해
 	// 예) number ="999" k = 1일 경우 "999"가 나오는데 이 부분이 있으면 "99"가 나오게 된다. 그 이유는 9보다 작은 수는 없기때문에 push만 일어나기때문
 	arr.splice(number.length - k, k);
 	return arr.join('');
 }
+
+let number1 = "1924";
+let k1 = 2;
+console.log(solution(number1, k1)); // 94
+
+let number2 = "1231234";
+let k2 = 3;
+console.log(solution(number2, k2)); // 3234
+
+let number3 = "4177252841";
+let k3 = 4;
+console.log(solution(number3, k3)); // 775841
+
+let number4 = "999";
+let k4 = 1;
+console.log(solution(number4, k4)); // 99
 
 // 스택을 이용한 방법 "1924"
 // 1. k = 2 일때, 1을 스택에 push
@@ -63,18 +81,4 @@ function solution(number, k) {
 k만큼 삭제된 경우 종료
 */
 
-let number1 = "1924";
-let k1 = 2;
-console.log(solution(number1, k1)); // 94
 
-let number2 = "1231234";
-let k2 = 3;
-console.log(solution(number2, k2)); // 3234
-
-let number3 = "4177252841";
-let k3 = 4;
-console.log(solution(number3, k3)); // 775841
-
-let number4 = "999";
-let k4 = 1;
-console.log(solution(number4, k4)); // 99
